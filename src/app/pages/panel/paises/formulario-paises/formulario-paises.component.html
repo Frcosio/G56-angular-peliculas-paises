@@ -1,0 +1,23 @@
+<p>formulario-paises works!</p>
+<ul>
+  <li *ngFor="let pais of listaPaisesFiltro">
+    <nz-card nzHoverable style="width:240px" [nzCover]="coverTemplate" >
+      <ng-template [ngIf]="pais.flags.png.substr(0,4)=='http'" >
+      <nz-card-meta
+      nzTitle="{{ pais.name.common }}"
+      nzDescription="{{ pais.cca3 }}"
+      ></nz-card-meta>
+    </ng-template>
+    <ng-template [ngIf]="pais.flags.png.substr(0,4)!='http'">
+      <b class="barra">+ {{pais.name.common}}</b>
+    </ng-template>
+    <ng-template [ngIf]="pais.cca3==''">
+      <h3 routerLink="list-movies">Ver Todos</h3>
+    </ng-template>
+    </nz-card>
+    <ng-template #coverTemplate>
+      <span class="dot"><img class="imagen1" alt="example" src= "{{pais.flags.png}}" /></span>
+    </ng-template>
+
+  </li>
+</ul>

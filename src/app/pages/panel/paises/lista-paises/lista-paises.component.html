@@ -1,0 +1,36 @@
+<!-- <p>lista-paises works!</p>
+<ul>
+  <li *ngFor="let pais of listaPaises">
+    {{pais.name.common}}
+    {{pais.flags.png}}
+    {{pais.cca3}}
+  </li>
+</ul> -->
+<!-- <nz-table #basicTable [nzData]="listaPaises">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>bandera</th>
+      <th>Abreviatura</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pais of basicTable.data">
+      <td>{{ pais.name.common }}</td>
+      <td>{{ pais.flags.png }}</td>
+      <td>{{ pais.cca3 }}</td>
+    </tr>
+  </tbody>
+</nz-table> -->
+
+<nz-list nzGrid>
+  <div nz-row [nzGutter]="16">
+    <div nz-col [nzXXl]="8" [nzXl]="4" [nzLg]="6" [nzMd]="6" [nzSm]="12" [nzXs]="24"
+    *ngFor="let pais of listaPaises">
+      <nz-list-item class="ant-card-head2">
+          <span class="dot"><img class="imagen1" [src]="pais.flags.png" alt=""></span>
+        <nz-card [nzTitle]="pais.cca3"><p>{{ pais.name.common }}</p></nz-card>
+      </nz-list-item>
+    </div>
+  </div>
+</nz-list>

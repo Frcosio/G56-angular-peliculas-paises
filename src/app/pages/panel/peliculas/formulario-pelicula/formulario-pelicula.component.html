@@ -1,0 +1,21 @@
+<p>formulario-pelicula works!</p>
+<tr>
+  <td class="lblPeliculas"><h1 class="TituloPeliculas">Resumen Peliculas</h1></td>
+  <td></td>
+  <td><button mat-button color="primary" (click)="ListarPeliculas()">Ver Todos</button></td>
+  <td></td>
+</tr>
+<ul>
+  <li *ngFor="let peliculas of listaPeliculasFiltro">
+    <nz-card nzHoverable style="width:240px" [nzCover]="coverTemplate">
+      <nz-card-meta
+      nzTitle="{{ peliculas.title }}"
+      nzDescription="{{ peliculas.vote_count }}"
+      ></nz-card-meta>
+    </nz-card>
+    <ng-template #coverTemplate>
+      <img alt="example" src= "{{'https://image.tmdb.org/t/p/w440_and_h660_face' + peliculas.poster_path}}" />
+    </ng-template>
+  </li>
+</ul>
+

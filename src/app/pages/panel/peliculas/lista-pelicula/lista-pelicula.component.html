@@ -1,0 +1,38 @@
+<!-- <p>lista-pelicula works!</p>
+<ul>
+  <li *ngFor="let peliculas of listaPeliculas">
+    {{peliculas.title}}
+    {{peliculas.poster_path}}
+    {{peliculas.vote_count}}
+  </li>
+</ul> -->
+<!-- <nz-table #basicTable [nzData]="listaPeliculas">
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Poster</th>
+      <th>Votos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let peliculas of basicTable.data">
+      <td>{{ peliculas.title}}</td>
+      <td>{{ 'https://image.tmdb.org/t/p/w440_and_h660_face'+peliculas.poster_path }}</td>
+      <td>{{ peliculas.vote_count }}</td>
+    </tr>
+  </tbody>
+</nz-table> -->
+<button nz-button nzType="primary" (click)="btnOrdenarDesc()" >Mayor a Menor</button>
+<button nz-button nzType="default" (click)="btnOrdenarAsc()">Menor a Mayor</button>
+
+<ul>
+  <li *ngFor="let peliculas of listaPeliculas">
+    <app-card-pelicula
+    titulo={{peliculas.title}}
+    descripcion={{peliculas.vote_count}}
+    imagen={{peliculas.poster_path}}
+    ></app-card-pelicula>
+  </li>
+</ul>
+
+

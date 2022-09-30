@@ -1,0 +1,10 @@
+
+<nz-card nzHoverable style="width:240px" [nzCover]="coverTemplate">
+  <nz-card-meta
+  [nzTitle]="titulo"
+  [nzDescription]="descripcion"
+  ></nz-card-meta>
+</nz-card>
+<ng-template #coverTemplate>
+  <img class="imagen1" alt="example" [src]= "imagen" (error)="imageError($event)"/>
+</ng-template>
